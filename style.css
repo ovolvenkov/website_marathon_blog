@@ -119,9 +119,11 @@ a {
 	font-size: 24px;
 	line-height: 1.5;
 	margin-right: 78px;
+
 }
 .menu_ul > .menu_li:last-child a {
 	margin-right: 0px;
+
 }
 
 .menu_li > a:after {
@@ -390,6 +392,16 @@ a {
 		margin-top: 42px;
 	}
 	
+	.news {
+		margin: 0 auto;
+	}
+
+	.article_list {
+		display: flex;
+		justify-content: center;
+
+
+	}
 
 	.article {
 		margin-top: 52px;
@@ -400,19 +412,41 @@ a {
 	}
 
 	.popular_header {
+
 		margin-top: 44px;
+
 	}
 
 	.popular_list {
+		display: flex;
+		justify-content: center;
 		margin-top: 42px;
+
 	}
+
+
+
+
+
+
+
 
 	.popular_article_name {
 		margin-bottom: 42px;
 	}
 
+	.popular_article:nth-last-child(-n+2) {
+		display: none;
+	}
+
 	.invite_photos {
+		display: flex;
+		justify-content: center;
 		margin-bottom: 32px;
+	}
+
+	.invite_photos > a:nth-last-child(-n+2) {
+		display: none;
 	}
 
 	.footer {
@@ -495,13 +529,13 @@ a {
 
 	.blog_text {
 		font-size: 36px;
-		line-height: 53px;
+		line-height: 1.5;
 		margin-top: 26px;
 	}
 
 	.text {
 		font-size: 16px;
-		line-height: 24px;
+		line-height: 1.5;
 		margin-top: 17px;
 		width: 250px;
 	}
@@ -557,8 +591,9 @@ a {
 	.popular_header {
 		margin-top: 38px;
 		font-size: 36px;
-		line-height: 53px;
+		line-height: 1.5;
 		margin-left: 5px;
+		text-align: center;
 	}
 
 	.popular_list {
@@ -572,7 +607,7 @@ a {
 
 	.invite_title {
 		font-size: 36px;
-		line-height: 53px;
+		line-height: 1.5;
 		margin-top: -18px;
 		margin-bottom: 31px;
 		margin-left: 5px;
@@ -611,7 +646,7 @@ a {
 		font-style: normal;
 		font-weight: normal;
 		font-size: 14px;
-		line-height: 19px;
+		line-height: 1.4;
 		color: #F2F2F2;
 		transform: none;
 		width: 640px;
