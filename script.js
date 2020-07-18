@@ -1,17 +1,15 @@
 'use strict'
 
-function brightnessImage(){
-	document.addEventListener('mouseover', e => {
-					if (e.target.matches('a>img')){
-						e.target.style.filter = 'brightness(50%)';
-					}
-				})
+let menu = document.querySelector('.menu_ul');
+let arrorMenu = menu.nextElementSibling;
+console.log(arrorMenu);
 
-	document.addEventListener('mouseout', (e)=>{
-					if(e.target.matches('a>img')){
-						e.target.style.filter = 'brightness(100%)';
-					}
-				})
-}
+menu.addEventListener('click', function (e){
 
-brightnessImage()
+	this.classList.toggle('menu_open');
+	
+
+/*	this.style.overflow = 'visible';
+	this.style.height = '100%';
+	arrorMenu.style.transform = 'rotate(120deg)'*/
+})
