@@ -28,9 +28,6 @@ menu()
 
 
 
-
-
-
 function rotateElement(selectorParentElements, selectorChildElements) {
 
 	const parentElements = document.querySelectorAll(selectorParentElements);
@@ -54,9 +51,9 @@ function rotateElement(selectorParentElements, selectorChildElements) {
 	}
 }
 
-//rotateElement('.article_photo', 'a img');
+// эффект для картинок статей//rotateElement('.article_photo', 'a img');
 
-rotateElement('.popular_article_photo', 'a img');
+// эффект для картинок популярные статьи//rotateElement('.popular_article_photo', 'a img');
 
 
 
