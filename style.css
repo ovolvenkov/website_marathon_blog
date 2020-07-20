@@ -67,8 +67,8 @@ a {
 	font-family: Open Sans;
 	font-style: normal;
 	font-weight: 600;
-	font-size: 1;
-	line-height: 19px;
+	font-size: 14px;
+	line-height: 1.4;
 	color: #fff;
 	transition: color .3s;
 }
@@ -437,6 +437,10 @@ a {
 
 	.nav {
 		margin-top: 34px;
+	}
+
+	.nav_ul {
+
 	}
 
 	.nav_ul .nav_li .nav_a {
