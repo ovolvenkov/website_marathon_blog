@@ -8,18 +8,22 @@ function menu() {
 	menuContainer.addEventListener('click', menuOpenClose);
 
 	function menuOpenClose(e) {
+
+		let menuLiColection = document.querySelectorAll('.menu_li');
 		if (window.getComputedStyle(arrow).display === 'block') {
 			this.children[0].children[0].classList.toggle('menu_open');
 			arrow.classList.toggle('menu_arrow_top');
-
-			let menuLiColection = document.querySelectorAll('.menu_li');
 
 			if (e.target.tagName === 'A') {
 				menuLiColection.forEach( item => item.children[0].classList.remove('menu_active'));
 				e.target.classList.add('menu_active');
 				menuUl.prepend(e.target.parentElement);
 			}
+		} else {
+			menuLiColection.forEach( item => item.children[0].classList.remove('menu_active'));
+			e.target.classList.add('menu_active');
 		}
+
 	} 
 }
 

@@ -137,8 +137,8 @@ a {
 	width: 100%;
 }
 
-.menu_li .menu_a:focus {
-	color: #F1B341;
+.menu_active {
+	color:#F1B341;
 }
 
 .menu_arrow {
