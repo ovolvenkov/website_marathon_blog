@@ -1,15 +1,62 @@
 'use strict'
 
-let menu = document.querySelector('.menu_ul');
-let arrorMenu = menu.nextElementSibling;
-console.log(arrorMenu);
+function menu() {
+	let menuContainer = document.querySelector('.menu .container');
+	let menuUl = document.querySelector('.menu_ul');
+	let arrow = document.querySelector('.menu_arrow');
 
-menu.addEventListener('click', function (e){
+	menuContainer.addEventListener('click', menuOpenClose);
 
-	this.classList.toggle('menu_open');
-	
+	function menuOpenClose(e) {
+		if (window.getComputedStyle(arrow).display === 'block') {
+			this.children[0].children[0].classList.toggle('menu_open');
+			arrow.classList.toggle('menu_arrow_top');
 
-/*	this.style.overflow = 'visible';
-	this.style.height = '100%';
-	arrorMenu.style.transform = 'rotate(120deg)'*/
-})
+			let menuLiColection = document.querySelectorAll('.menu_li');
+
+			if (e.target.tagName === 'A') {
+				menuLiColection.forEach( item => item.children[0].classList.remove('menu_active'));
+				e.target.classList.add('menu_active');
+				menuUl.prepend(e.target.parentElement);
+			}
+		}
+	} 
+}
+
+menu()
+
+
+
+
+
+
+
+function rotateElement(selectorParentElements, selectorChildElements) {
+
+	const parentElements = document.querySelectorAll(selectorParentElements);
+
+	for (var i = 0; i < parentElements.length; i++) {
+		const parentElement = parentElements[i];
+		parentElement.addEventListener('mousemove', startRotate);
+		parentElement.addEventListener('mouseout', stopRotate);
+	}
+
+	function startRotate(e) {
+		const childElement = this.querySelector(selectorChildElements);
+		const halfHeightEl = childElement.offsetHeight/2;
+
+		childElement.style.transform = `rotateX(${(e.offsetY - halfHeightEl)/5}deg) rotateY(${(e.offsetX - halfHeightEl)/5}deg)`;
+	}
+
+	function stopRotate(e) {
+		const childElement = this.querySelector(selectorChildElements);
+		childElement.style.transform = 'rotate(0)';
+	}
+}
+
+//rotateElement('.article_photo', 'a img');
+
+rotateElement('.popular_article_photo', 'a img');
+
+
+

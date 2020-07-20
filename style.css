@@ -140,6 +140,10 @@ a {
 	color: #F1B341;
 }
 
+.menu_arrow {
+	display: none;
+}
+
 .article_list {
 	display: flex;
 	flex-wrap: wrap;
@@ -159,6 +163,19 @@ a {
 	transition: all .2s;
 }
 
+/*-------article_rotate_images---------*/
+
+.article_photo {
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+.article_photo img {
+	transition: transform .2s;
+}
+
+/*---------------------------------------*/
+
 .article_photo:hover {
 	filter: brightness(50%) saturate(150%);
 }
@@ -171,10 +188,30 @@ a {
 	line-height: 1.5;
 	height: 72px;
 	margin-bottom: 13px;
+	border-bottom-width: 0px;
+}
+
+/* animation color link start*/
+
+.article_name a {
+    position: relative;
+    display: inline-block;
+    color: #121212;
+    overflow: hidden;
+    background: linear-gradient(to right, #F1B341, #F1B341 50%, #121212 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
 }
 
 .article_name a:hover {
+    background-position: 0 100%;
 }
+
+/* animation color link end*/
 
 .article_text {
 	font-family: Open Sans;
@@ -189,32 +226,12 @@ a {
 
 .article_btn_detail {
 	color:#F1B341;
-	border: none;
-	background: none;
 	padding-top: 7px;
 	padding-left: 0px;
 	font-family: Open Sans;
-	font-style: normal;
-	font-weight: normal;
 	font-size: 18px;
 	line-height: 1.4;
-	transition: 0.2s;
-}
-
-.article_btn_detail:after {
-	display: block;
-	position: absolute;
-	margin-top: 0px;
-	left: 0;
-	width: 0;
-	height: 1px; 
-	background-color:  #F1B341; 
-	content: "";
-	transition: width 0.3s ease-out; 
-}
-
-.article_btn_detail:hover:after{
-	width: 100%;
+	transition: .2s;
 }
 
 .article_btn_detail:hover {
@@ -270,14 +287,24 @@ a {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	overflow: hidden;
 	margin-top: 50px;
 }
+
+/*----------popular_rotate_images---------*/
 
 .popular_article_photo {
 	margin-bottom: 16px;
 	transition: all .2s;
+	
+	perspective: 1000px;
+	transform-style: preserve-3d;
 }
+
+.popular_article_photo img {
+	transition: transform .2s;
+}
+
+/*---------------------------------------*/
 
 .popular_article_photo:hover {
 	filter: brightness(50%) saturate(150%);
@@ -288,6 +315,22 @@ a {
 	line-height: 1.5;
 	width: 334px;
 	margin-bottom: 53px;
+	/* animation color link */
+	position: relative;
+    display: inline-block;
+    color: #121212;
+    overflow: hidden;
+    background: linear-gradient(to right, #F1B341, #F1B341 50%, #121212 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+}
+
+.popular_article_name:hover {
+    background-position: 0 100%;
 }
 
 .invite_title {
@@ -332,7 +375,6 @@ a {
 	display: flex;
 	justify-content: space-between;
 	margin-right: 15px;
-
 }
 
 .socialNetworks > a {
@@ -368,9 +410,7 @@ a {
 }
 
 
-
 /*-----------------------for device from 375px to 768px--------------------------*/
-
 
 
 @media (min-width: 375px) and (max-width: 768px) {
@@ -428,7 +468,6 @@ a {
 	.article {
 		margin-top: 52px;
 	}
-
 
 	.article_list {
 		justify-content: center;
@@ -492,7 +531,6 @@ a {
 		margin-top: 9px;
 	}
 
-
 	.socialNetworks {
 		margin-left: 7px;
 		width: 169px;
@@ -536,7 +574,7 @@ a {
 		top: -20px;
 		left: -202px;
 		z-index: 1;
-		clip: rect(0px, auto, 380px, 0px );
+		clip: rect(0px, auto, 380px, 0px);
 	}
 
 	.nav {
@@ -558,8 +596,8 @@ a {
 		width: 27px;
 		border-bottom: 1px solid #fff;
 		margin-top: 8px;
+		transition: all 0.2s;
 	}
-
 
 	.blog_text {
 		font-size: 36px;
@@ -585,30 +623,37 @@ a {
 		width: 344px;
 		height: 41px;
 		overflow: hidden;
-		transition: all 0.5s;
-
+		transition: all 0.3s;
 	}
-
 
 	.menu_open {
 		height: 150px;
+		background:#f5f6f9;
 	}
 
 	.menu_li .menu_a {
 		margin-left: 18px;
 	}
 
-	.menu_ul:after {
-		content: url(images/menu_arrow.png);
-		display: inline-block;
-		transform-origin: center center;
-		transform: translate(309px,-130px) rotateX(0deg);
-		transition: all 1.5s;
-	}
-
-
 	.menu_li .menu_a:hover:after {
 		width: 0px;
+	}
+
+	.menu_active {
+		color: #F1B341;
+	}
+
+	.menu_arrow {
+		display: block;
+		position: absolute;
+		right: 34px;
+		top: 425px;
+		transform: scale(1.8);
+		transition: all 0.3s;
+	}
+
+	.menu_arrow_top {
+		transform: scale(1.8) rotate(180deg);
 	}
 
 	.article_list {	
@@ -644,7 +689,6 @@ a {
 		font-size: 36px;
 		line-height: 1.5;
 		margin-left: 5px;
-
 	}
 
 	.popular_list {
@@ -720,7 +764,6 @@ a {
 	.socialNetworks {
 		margin-top: 5px;
 		width: 123px;
-
 	}
 
 }
