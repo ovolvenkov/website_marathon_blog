@@ -32,7 +32,7 @@ a {
 	justify-content: space-between;
 }
 
-.vector>img {
+.vector img {
 	position: absolute;
 	left: 3px;
 	top: 44px;
@@ -246,13 +246,14 @@ a {
 	display: block;
 	position: absolute;
 	margin-top: 9px;
-	top:14px;
+	top: 25px;
 	left: 0;
 	width: 0;
 	height: 1px; 
 	background-color:  #F1B341; 
 	content: "";
 	transition: width 0.2s ease-out; 
+
 }
 
 .article_btn_detail:hover:after{
@@ -263,7 +264,7 @@ a {
 	filter: saturate(170%);
 }
 
-.pagination {
+.pagination .container {
 	display: flex;
 	justify-content: center;
 	font-family: Open Sans;
@@ -295,7 +296,7 @@ a {
 	align-items: flex-end;
 }
 
-.pagination > .number_page:hover, .number_page:hover {
+.pagination .number_page:hover, .number_page:hover {
 	color: #F1B341;
 	border-color:#F1B341;: 
 }
@@ -340,7 +341,7 @@ a {
 	line-height: 1.5;
 	width: 334px;
 	margin-bottom: 53px;
-	/* animation color link */
+/* animation color link */
 	position: relative;
     display: inline-block;
     color: #121212;
@@ -402,12 +403,12 @@ a {
 	margin-right: 15px;
 }
 
-.socialNetworks > a {
+.socialNetworks a {
 	margin-right: 10px;
 	transition: all .2s;
 }
 
-.socialNetworks > a:hover {
+.socialNetworks a:hover {
 	transform: scale(1.1,1.1);
 	filter: brightness(40%) saturate(150%);
 }
@@ -444,7 +445,7 @@ a {
 		padding: 0 15px;
 	}
 
-	.vector > img {
+	.vector img {
 		width: 295px;
 		height: 97px;
 		left: -3px;
@@ -490,11 +491,9 @@ a {
 		flex-direction: row;
 	}
 
-	
 	.news {
 		margin: 0 auto;
 	}
-
 
 	.article {
 		margin-top: 54px;
@@ -509,7 +508,7 @@ a {
 		transform: translateX(15px);
 	}
 
-	.pagination {
+	.pagination .container {
 		margin-top: 110px;
 	}
 
@@ -545,12 +544,12 @@ a {
 		justify-content: center;
 	}
 
-	.invite_photos > a {
+	.invite_photos a {
 		width: 364px;
 		transform: translateX(15px);
 	}
 
-	.invite_photos > a:nth-last-child(-n+2) {
+	.invite_photos a:nth-last-child(-n+2) {
 		display: none;
 	}
 
@@ -701,7 +700,7 @@ a {
 		transform: translateX(4px);
 	}
 
-	.pagination {
+	.pagination .container {
 		margin-top: 12px;
 	}
 
@@ -748,15 +747,13 @@ a {
 		flex-wrap: nowrap;
 		overflow: hidden;
 		margin-bottom: 38px;
-
-
 	}
 
 	.invite_photos a {
 		transform: translateX(4px);
 	}
 
-	.invite_photos > a:nth-last-child(-n+3) {
+	.invite_photos a:nth-last-child(-n+3) {
 		display: none;
 	}
 
@@ -769,8 +766,6 @@ a {
 		flex-direction: column;
 	}
 
-
-
 	.footer .container {
 		display: flex;
 		flex-direction: row;
@@ -778,7 +773,6 @@ a {
 		flex-wrap: wrap-reverse;
 		width: 350px;
 	}
-
 
 	.company_info {
 		font-size: 12px;
